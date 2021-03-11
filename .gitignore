@@ -1,0 +1,8 @@
+# Папки и файлы которые Гит должен игнорировать
+.vscode
+.idea
+.DS_store
+node_modules
+.env
+build/
+*.psd
