@@ -38,13 +38,29 @@ const onImageClick = (evt) => {
 
 const closeButton = document.querySelector('button[data-action="close-lightbox"]');
 const lightboxImage = document.querySelector('img.lightbox__image');
-const onCloseButtonClick = (evt) => {
+const onModalIsClosed = (evt) => {
     console.log(evt.target);
      lightboxImage.src = ''; 
     lightbox.classList.remove('is-open');
      
 }
 
-closeButton.addEventListener('click', onCloseButtonClick);
+closeButton.addEventListener('click', onModalIsClosed);
 
 galleryList.addEventListener('click', onImageClick);
+
+const onByEscButtonClose = (evt) => {
+    evt.preventDefault();
+    if (evt.keyCode == 27) {
+        console.log(evt.keyCode);
+        lightboxImage.src = '';
+        lightbox.classList.remove('is-open');
+    } else {
+        return;
+    }
+}
+window.addEventListener('keydown', onByEscButtonClose)
+// window.addEventListener('keydown', (evt) => {
+//     console.log(evt.keyCode);
+//     return evt.key;
+// });
