@@ -68,6 +68,10 @@ const onSlideToLeft = (evt) => {
                 lightboxImage.src = pictures[currentImageIndex - 1].original;
         console.log('left');  
         }
+        if (currentImageIndex == 0) {
+                lightboxImage.src = pictures[pictures.length - 1].original;
+        console.log('left');  
+        }
   
     }
 };
@@ -81,7 +85,11 @@ const onSlideToRight = (evt) => {
         if (currentImageIndex < pictures.length - 1) {
             lightboxImage.src = pictures[currentImageIndex + 1].original;
         console.log('right');
-        }        
+        }
+        if (currentImageIndex == pictures.length - 1) {
+            lightboxImage.src = pictures[0].original;
+            console.log('right');
+        }
     } 
 };
 
